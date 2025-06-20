@@ -30,7 +30,6 @@ if (isset($_GET['id'])) {
     $tweet_id = $_SESSION['tweet_id'];
 } else {
     echo "値が有りません。";
-    // idが存在しないときはログインページに戻る
 }
 
 try { // MySQL　PDO接続

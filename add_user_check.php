@@ -26,7 +26,7 @@ try { // PDO接続
 
 
 // 各フォームに値が入っているなら実行する。
-if (!empty($_POST['first_name'] && $_POST['last_name'] && $_POST['email'] && $_POST['password'])) {
+if (!empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['password'])) {
     // フォームから値の受け取り
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -39,7 +39,6 @@ if (!empty($_POST['first_name'] && $_POST['last_name'] && $_POST['email'] && $_P
     $stmt->bindValue(':email', $email);
     $stmt->execute();
     $user = $stmt->fetch();
-
 
     // ユーザーを追加する
     $sql = "INSERT INTO users(first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password)";
